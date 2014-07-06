@@ -2,7 +2,7 @@ var pref =[];
 function loadDataFile(fName){
   httpObj = createXMLHttpRequest(displayData);
   if(httpObj){
-    httpObj.open("GET",fName,false); //chormeでは同期でないとエラーになる
+    httpObj.open("GET",fName,true); //chormeでは同期でないとエラーになる
     httpObj.send(null);
   }
 }

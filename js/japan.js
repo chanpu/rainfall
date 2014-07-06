@@ -24,7 +24,7 @@ function initScene(json) {
     // レンダラーの作成
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(width,height);
-    renderer.setClearColorHex(0x6CAAFF, 1);
+    renderer.setClearColor(0x6CAAFF, 1);
     container.appendChild(renderer.domElement);
 
     // カメラの設定
@@ -91,23 +91,27 @@ function initScene(json) {
 // 月のパラメータの変更によるデータの変更を行う関数
 function changeMonth(value){
   for(var i=0;i<67;i++){
-      rmcity = citybox.shift();
-      scene.remove(rmcity);
-      city = new City(pref[1][i+1],pref[2][i+1],pref[31*(value-1)+3+day][i+1]);
-      citybox.push(city.threeObj);
-      scene.add(city.threeObj);
-      month=value-1;
+      if(pref[1] !== undefined){
+        rmcity = citybox.shift();
+        scene.remove(rmcity);
+        city = new City(pref[1][i+1],pref[2][i+1],pref[31*(value-1)+3+day][i+1]);
+        citybox.push(city.threeObj);
+        scene.add(city.threeObj);
+        month=value-1;
+      }
   }
 }
 // 日のパラメータの変更によるデータの変更を行う関数
 function changeDay(value){
   for(var i=0;i<67;i++){
-      rmcity = citybox.shift();
-      scene.remove(rmcity);
-      city = new City(pref[1][i+1],pref[2][i+1],pref[month*31+3+(value-1)][i+1]);
-      citybox.push(city.threeObj);
-      scene.add(city.threeObj);
-      day=value-1;
+      if(pref[1] !== undefined){
+        rmcity = citybox.shift();
+        scene.remove(rmcity);
+        city = new City(pref[1][i+1],pref[2][i+1],pref[month*31+3+(value-1)][i+1]);
+        citybox.push(city.threeObj);
+        scene.add(city.threeObj);
+        day=value-1;
+      }
   }
 }
 // 降水オブジェクトを生成する関数
