@@ -83,9 +83,11 @@ function initScene(json) {
 
     //各地の降水量オブジェクト
     for(var i=0;i<67;i++){
-      city = new City(pref[1][i+1],pref[2][i+1],pref[3][i+1]);
-      citybox.push(city.threeObj);
-      scene.add(city.threeObj);
+      if(pref[1] !== undefined){
+        city = new City(pref[1][i+1],pref[2][i+1],pref[3][i+1]);
+        citybox.push(city.threeObj);
+        scene.add(city.threeObj);
+      }
     }
 }
 // 月のパラメータの変更によるデータの変更を行う関数
