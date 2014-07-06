@@ -1,0 +1,33 @@
+body {
+  background-color: #F8F8F8;
+  text-align: center;
+}
+#year {
+  position: absolute;
+  left: 50px;
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: bold;
+}
+#month-slider {
+  position: absolute;
+  width: 1000px;
+  top: 60px;
+  left: 50px;
+
+}
+#day-slider {
+  position: absolute;
+  width: 1000px;
+  top: 120px;
+  left: 50px;
+}
+#japan {
+  margin: 0 auto;
+  position: relative;
+}
+#dorpmm {
+  position: absolute;
+  bottom:30px;
+  right:30px;
+}
