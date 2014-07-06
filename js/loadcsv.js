@@ -9,7 +9,6 @@ function loadDataFile(fName){
 function displayData(){
   if ((httpObj.readyState == 4) && (httpObj.status == 200)){
     pref  = csvtrans(httpObj.responseText);
-    console.log(pref);
   }
 }
 function createXMLHttpRequest(cbFunc){
