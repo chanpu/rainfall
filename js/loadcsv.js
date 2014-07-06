@@ -7,7 +7,6 @@ function loadDataFile(fName){
   }
 }
 function displayData(){
-  console.log(httpObj);
   if ((httpObj.readyState == 4) && (httpObj.status == 200)){
     pref  = csvtrans(httpObj.responseText);
     console.log(pref);
