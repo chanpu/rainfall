@@ -2,13 +2,15 @@ var pref =[];
 function loadDataFile(fName){
   httpObj = createXMLHttpRequest(displayData);
   if(httpObj){
-    httpObj.open("GET",fName,true); //chormeでは同期でないとエラーになる
+    httpObj.open("GET",fName,true);
     httpObj.send(null);
   }
 }
 function displayData(){
-  if ((httpObj.readyState == 4) && (httpObj.status === 0)){
+  console.log(httpObj);
+  if ((httpObj.readyState == 4) && (httpObj.status == 200)){
     pref  = csvtrans(httpObj.responseText);
+    console.log(pref);
   }
 }
 function createXMLHttpRequest(cbFunc){
